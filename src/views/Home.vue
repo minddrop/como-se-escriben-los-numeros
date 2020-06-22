@@ -6,11 +6,13 @@
 
 <script lang="ts">
 import Title from '../components/Title.vue'
+import { Vue } from 'vue-property-decorator'
+import Component from 'vue-class-component'
 
-export default {
-  name: 'Home',
+@Component({
   components: {
     Title,
   },
-}
+})
+export default class Home extends Vue {}
 </script>
