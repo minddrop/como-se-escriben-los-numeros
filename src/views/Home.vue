@@ -5,12 +5,12 @@
 </template>
 
 <script lang="ts">
-import Title from "../components/Title.vue";
+import Title from '../components/Title.vue'
 
 export default {
-  name: "Home",
+  name: 'Home',
   components: {
-    Title
-  }
-};
+    Title,
+  },
+}
 </script>

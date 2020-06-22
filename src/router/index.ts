@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import VueRouter, {RouteConfig} from 'vue-router'
+import VueRouter, { RouteConfig } from 'vue-router'
 import Home from '../views/Home.vue'
 import Game from '../views/Game.vue'
 
@@ -9,19 +9,19 @@ const routes: Array<RouteConfig> = [
   {
     path: '/',
     name: 'Home',
-    component: Home
+    component: Home,
   },
   {
     path: '/game',
     name: 'Game',
-    component: Game
-  }
+    component: Game,
+  },
 ]
 
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
-  routes
+  routes,
 })
 
 export default router
