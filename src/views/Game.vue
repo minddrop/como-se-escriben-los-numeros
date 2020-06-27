@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div>number{{ num }}</div>
+    <div>number: {{ num }}</div>
     <Syllabary :num="num"></Syllabary>
     <button @click="nextNum()">aaa</button>
   </div>
@@ -18,7 +18,6 @@ import Syllabary from '../components/Syllabary.vue'
 })
 export default class Game extends Vue {
   num: number = 0
-  ruby: string = 'ceno'
 
   nextNum() {
     this.num = this.generateRandomNum()
