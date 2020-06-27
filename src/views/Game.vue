@@ -17,7 +17,7 @@ import Syllabary from '../components/Syllabary.vue'
   },
 })
 export default class Game extends Vue {
-  num: number = 0
+  num: number = 15
 
   nextNum() {
     this.num = this.generateRandomNum()

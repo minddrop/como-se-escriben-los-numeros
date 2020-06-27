@@ -11,10 +11,13 @@ export default class Syllabary extends Vue {
   @Prop() private num!: number
 
   get getSyllabary() {
-    if (9999 < this.num) {
-      return 'demasiado gran número'
-    }
     const n = this.num
+
+    if (9999 < n) {
+      return 'demasiado gran número'
+    } else if (0 <= n && n <= 20) {
+      return this.hastaVeinte(n)
+    }
     const thousands = this.thousandsPlace(n)
     const hundreds = this.hundredsPlace(n % 1000)
     const tens = this.tensPlace(n % 100)
@@ -116,8 +119,21 @@ export default class Syllabary extends Vue {
     return ''
   }
 
-  // hastaVeinte(n: number) {
-  //   if(n === )
-  // }
+  hastaVeinte(n: number) {
+    if (n === 20) {
+      return 'veinte'
+    } else if (n === 19) {
+      return 'diecinueve'
+    } else if (n === 18) return 'dieciocho'
+    else if (n === 17) return 'diecisiete'
+    else if (n === 16) return 'dieciséis'
+    else if (n === 15) return 'quince'
+    else if (n === 14) return 'catorce'
+    else if (n === 13) return 'trece'
+    else if (n === 12) return 'doce'
+    else if (n === 11) return 'once'
+    else if (1 <= n) return this.onesPlace(n)
+    else return 'ceno'
+  }
 }
 </script>
