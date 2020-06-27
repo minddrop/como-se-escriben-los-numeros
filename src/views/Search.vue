@@ -1,8 +1,7 @@
 <template>
   <div>
-    <div>número: {{ num }}</div>
+    <input :type="number" v-model.number="num" />
     <Syllabary :num="num"></Syllabary>
-    <button @click="nextNum()">siguiente</button>
   </div>
 </template>
 
@@ -16,16 +15,7 @@ import Syllabary from '../components/Syllabary.vue'
     Syllabary,
   },
 })
-export default class Game extends Vue {
-  num: number = 15
-
-  nextNum() {
-    this.num = this.generateRandomNum()
-  }
-
-  generateRandomNum() {
-    const num = Math.floor(Math.random() * 9000) + 1000
-    return num
-  }
+export default class Search extends Vue {
+  num: number = 0
 }
 </script>

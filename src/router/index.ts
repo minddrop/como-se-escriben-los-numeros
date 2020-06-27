@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter, { RouteConfig } from 'vue-router'
 import Home from '../views/Home.vue'
 import Game from '../views/Game.vue'
+import Search from '../views/Search.vue'
 
 Vue.use(VueRouter)
 
@@ -15,6 +16,11 @@ const routes: Array<RouteConfig> = [
     path: '/game',
     name: 'Game',
     component: Game,
+  },
+  {
+    path: '/search',
+    name: 'Search',
+    component: Search,
   },
 ]
 
