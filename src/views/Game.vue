@@ -1,8 +1,16 @@
 <template>
-  <div>
-    <div>número: {{ num }}</div>
-    <Syllabary :num="num"></Syllabary>
-    <button @click="nextNum()">siguiente</button>
+  <div class="game-content">
+   <div class="game-content_box">
+    <div class="game-content_box_number">
+      número: {{ num }}
+    </div>
+    <div class="game-content_box_syllabary">
+      <Syllabary :num="num"></Syllabary>
+    </div>
+   </div> 
+   <button class="game-content_button" @click="nextNum()">
+      siguiente
+   </button>
   </div>
 </template>
 
@@ -29,3 +37,26 @@ export default class Game extends Vue {
   }
 }
 </script>
+<style lang="scss" scoped>
+.game-content{
+      width:390px;
+      margin-left:auto;
+      margin-right:auto;
+      margin-top:20%; 
+      margin-bottom: 20%;
+      display:flex;
+    &_box{
+      width: 300px;
+      &_number{
+      width: 200px;
+      }
+      &_syllabary{
+      width: 500px;
+      }      
+    }  
+    &_button{
+      width: 100px;
+      margin-left: 50px;
+    }  
+}
+</style>
