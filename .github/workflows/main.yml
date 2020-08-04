@@ -1,4 +1,4 @@
-name: deply to gh-pages
+name: deploy to gh-pages
 
 on:
   push:
@@ -8,12 +8,13 @@ on:
 jobs:
   deply:
     runs-on: ubuntu-20.04
-    strategy:
-      matrix:
-        node: ['12.x']
+
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - name: checkout <- is it necessary?
+        uses: actions/checkout@v2
+
+      - name: node setup
+        uses: actions/setup-node@v2-beta
         with:
           node-version: ${{ matrix.node }}
 
