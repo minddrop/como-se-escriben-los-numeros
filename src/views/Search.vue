@@ -20,11 +20,11 @@ export default class Search extends Vue {
 }
 </script>
 <style lang="scss" scoped>
-.search-content{
-      width:200px;
-      margin-left:auto;
-      margin-right:auto;
-      margin-top:20%; 
-      margin-bottom: 20%;
+.search-content {
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20%;
+  margin-bottom: 20%;
 }
 </style>

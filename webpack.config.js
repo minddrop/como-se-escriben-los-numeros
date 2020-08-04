@@ -1,6 +1,6 @@
 const TerserPlugin = require('terser-webpack-plugin')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
-const HtmlPlugin = require ('html-webpack-plugin')
+const HtmlPlugin = require('html-webpack-plugin')
 const MODE = 'development'
 
 module.exports = {
@@ -8,31 +8,31 @@ module.exports = {
   entry: `${__dirname}/src/main.ts`,
   output: {
     path: `${__dirname}/dist`,
-    filename: "main.js"
+    filename: 'main.js',
   },
   module: {
     rules: [
       {
         test: /\.ts$/,
         exclude: /node_modules/,
-        loader: "ts-loader",
+        loader: 'ts-loader',
         options: {
           appendTsSuffixTo: [/\.vue$/],
-        }
+        },
       },
       {
         test: /\.vue$/,
-        use: "vue-loader"
+        use: 'vue-loader',
       },
       {
         test: /\.css/,
         use: [
-          "style-loader",
+          'style-loader',
           {
-            loader: "css-loader",
-            options: { url: false }
-          }
-        ]
+            loader: 'css-loader',
+            options: { url: false },
+          },
+        ],
       },
       {
         test: /\.scss$/,
@@ -46,12 +46,12 @@ module.exports = {
           {
             loader: 'sass-loader',
           },
-        ]
+        ],
       },
-    ]
+    ],
   },
   resolve: {
-    extensions: [".ts", ".js"],
+    extensions: ['.ts', '.js'],
   },
   plugins: [
     new VueLoaderPlugin(),
@@ -60,23 +60,24 @@ module.exports = {
       template: 'public/index.html',
       minify: {
         removeComments: true,
-        collapseWhitespace: true
-      }
-    })
+        collapseWhitespace: true,
+      },
+    }),
   ],
   optimization: {
-    minimizer: MODE === 'production'
-      ? []
-      : [
-        new TerserPlugin({
-          extractComments: 'all',
-          terserOptions: {
-             compress: {drop_console: true}
-          }
-        })
-      ]
+    minimizer:
+      MODE === 'production'
+        ? []
+        : [
+            new TerserPlugin({
+              extractComments: 'all',
+              terserOptions: {
+                compress: { drop_console: true },
+              },
+            }),
+          ],
   },
   devServer: {
-    contentBase: `${__dirname}/dist`
-  }
+    contentBase: `${__dirname}/dist`,
+  },
 }

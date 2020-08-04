@@ -17,11 +17,11 @@ import Component from 'vue-class-component'
 export default class Home extends Vue {}
 </script>
 <style lang="scss" scoped>
-.title{
-    width: 520px;
-    margin-left:auto;
-    margin-right:auto;
-    margin-top:20%; 
-    margin-bottom: 20%;
+.title {
+  width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20%;
+  margin-bottom: 20%;
 }
 </style>
