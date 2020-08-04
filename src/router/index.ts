@@ -5,6 +5,9 @@ import Game from '../views/Game.vue'
 import Search from '../views/Search.vue'
 
 Vue.use(VueRouter)
+console.log(process.env.BASE)
+const base =
+  process.env.NODE_ENV === 'production' ? 'como-se-escribe-los-numeros' : '/'
 
 const routes: Array<RouteConfig> = [
   {
@@ -26,7 +29,7 @@ const routes: Array<RouteConfig> = [
 
 const router = new VueRouter({
   mode: 'history',
-  base: process.env.BASE_URL,
+  base: base,
   routes,
 })
 
