@@ -63,6 +63,14 @@ module.exports = {
         collapseWhitespace: true,
       },
     }),
+    new HtmlPlugin({
+      filename: '404.html',
+      template: 'public/404.html',
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true,
+      },
+    }),
   ],
   optimization: {
     minimizer:
