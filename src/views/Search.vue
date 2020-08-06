@@ -1,6 +1,6 @@
 <template>
   <div class="search-content">
-    <input :type="number" v-model.number="num" />
+    <input v-model.number="num" />
     <Syllabary :num="num"></Syllabary>
   </div>
 </template>
