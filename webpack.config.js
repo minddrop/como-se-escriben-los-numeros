@@ -4,11 +4,14 @@ const HtmlPlugin = require('html-webpack-plugin')
 const MODE = 'development'
 
 module.exports = {
-  mode: 'development',
-  entry: `${__dirname}/src/main.ts`,
+  mode: MODE,
+  entry: {
+    main: `${__dirname}/src/main.ts`,
+    404: `${__dirname}/src/pages/404.ts`,
+  },
   output: {
     path: `${__dirname}/dist`,
-    filename: 'main.js',
+    filename: '[name].js',
   },
   module: {
     rules: [
@@ -62,6 +65,16 @@ module.exports = {
         removeComments: true,
         collapseWhitespace: true,
       },
+    }),
+    new HtmlPlugin({
+      filename: '404.html',
+      template: 'public/404.html',
+      inject: 'head',
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true,
+      },
+      chunks: ['404'],
     }),
   ],
   optimization: {
