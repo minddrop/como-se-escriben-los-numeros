@@ -45,5 +45,3 @@
 // mode & 8|1: behave like require
 
 // webpackBootstrap
-
-// window.location.pathname = '/como-se-escribe-los-numeros/'
