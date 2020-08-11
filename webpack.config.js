@@ -65,6 +65,7 @@ module.exports = {
         removeComments: true,
         collapseWhitespace: true,
       },
+      chunks: ['main'],
     }),
     new HtmlPlugin({
       filename: '404.html',
