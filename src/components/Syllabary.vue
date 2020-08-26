@@ -16,12 +16,19 @@ export default class Syllabary extends Vue {
     if (9999 < n) return 'el número es demasiado grande'
     else if (n === 0) return 'cero'
     else if (0 <= n && n < 10) return this.onesPlace(n)
-    else if (10 <= n && n < 21) return this.hasta10desde20(n)
+    else if (10 <= n && n < 30) return this.hasta10desde29(n)
 
     const thousands = this.thousandsPlace(n)
     const hundreds = this.hundredsPlace(n % 1000)
-    const tens = this.tensPlace(n % 100)
-    const ones = this.onesPlace(n % 10)
+    const [tens, ones] = (() => {
+      const t = ((x: number) => {
+        return 10 <= x && x < 30 ? this.hasta10desde29(x) : this.tensPlace(x)
+      })(n % 100)
+      const o = ((x: number) => {
+        return !(10 <= n % 100 && n % 100 < 30) ? this.onesPlace(x) : ''
+      })(n % 10)
+      return [t, o]
+    })()
     return `
       ${thousands !== '' ? thousands : ''}
       ${hundreds !== '' ? ' ' + hundreds : ''}
@@ -84,8 +91,17 @@ export default class Syllabary extends Vue {
     return ''
   }
 
-  hasta10desde20(n: number) {
-    if (n === 20) return 'veinte'
+  hasta10desde29(n: number) {
+    if (n === 29) return 'veintinueve'
+    else if (n === 28) return 'veintiocho'
+    else if (n === 27) return 'veintisiete'
+    else if (n === 26) return 'veintiséis'
+    else if (n === 25) return 'veinticinco'
+    else if (n === 24) return 'veinticuatro'
+    else if (n === 23) return 'veintitrés'
+    else if (n === 22) return 'veintidós'
+    else if (n === 21) return 'veintiuno'
+    else if (n === 20) return 'veinte'
     else if (n === 19) return 'diecinueve'
     else if (n === 18) return 'dieciocho'
     else if (n === 17) return 'diecisiete'
