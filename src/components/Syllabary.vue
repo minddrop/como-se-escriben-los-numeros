@@ -13,8 +13,8 @@ export default class Syllabary extends Vue {
   get getSyllabary() {
     const n = this.num
 
-    if (9999 < n) return 'demasiado gran número'
-    else if (n === 0) return 'ceno'
+    if (9999 < n) return 'el número es demasiado grande'
+    else if (n === 0) return 'cero'
     else if (0 <= n && n < 10) return this.onesPlace(n)
     else if (10 <= n && n < 21) return this.hasta10desde20(n)
 
