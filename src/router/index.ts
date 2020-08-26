@@ -7,7 +7,7 @@ import Search from '../views/Search.vue'
 Vue.use(VueRouter)
 console.log(process.env.BASE)
 const base =
-  process.env.NODE_ENV === 'production' ? 'como-se-escribe-los-numeros' : '/'
+  process.env.NODE_ENV === 'production' ? 'como-se-escriben-los-numeros' : '/'
 
 const routes: Array<RouteConfig> = [
   {
