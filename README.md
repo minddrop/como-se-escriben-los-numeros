@@ -1,3 +1,3 @@
-# como-se-escribe-los-numeros
+# como-se-escriben-los-numeros
 
-See [this](https://minddrop.github.io/como-se-escribe-los-numeros/).
+See [this](https://minddrop.github.io/como-se-escriben-los-numeros/).

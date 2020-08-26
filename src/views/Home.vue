@@ -1,6 +1,6 @@
 <template>
   <div class="title">
-    <Title title="Cómo se escribe los números?" />
+    <Title title="Cómo se escriben los números?" />
   </div>
 </template>
 

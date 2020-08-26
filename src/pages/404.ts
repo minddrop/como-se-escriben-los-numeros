@@ -1,1 +1,1 @@
-window.location.pathname = '/como-se-escribe-los-numeros/'
+window.location.pathname = '/como-se-escriben-los-numeros/'
